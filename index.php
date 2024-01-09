@@ -30,6 +30,10 @@
 
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "BASEDATOS");
 
+        if (!$conexion) {
+            die("La conexión a la base de datos falló: " . mysqli_connect_error());
+        }
+
         $cadenaSQL = "select * from agenda;";
         $resultado = mysqli_query($conexion, $cadenaSQL);
 
