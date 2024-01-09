@@ -30,7 +30,7 @@
 
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "BASEDATOS");
 
-        $cadenaSQL = "select * from agenda";
+        $cadenaSQL = "select * from agenda;";
         $resultado = mysqli_query($conexion, $cadenaSQL);
 
         while ($fila = mysqli_fetch_object($resultado)) {
@@ -38,7 +38,7 @@
          "</td><td>" . $fila->apellido .
          "</td><td>" . $fila->direccion .
          "</td><td>" . $fila->telefijo .
-         "</td><td>" . $fila->telefmovi .
+         "</td><td>" . $fila->telemovil .
          "</td><td>" . $fila->email .
          "</td></tr>";
        }
@@ -51,4 +51,5 @@
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
